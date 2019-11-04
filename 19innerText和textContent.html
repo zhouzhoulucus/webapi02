@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 10px solid red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="设置值" id="btn"/>
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    // 设置标签中的文本内容,应该使用 textContent属性, 谷歌 火狐支持, IE8不支持
+    // 点击按钮设置div中的文本内容
+    // 设置标签中文本内容, 应该使用 innerText属性, 谷歌 火狐 IE8 都支持
+    // 如果有人用的火狐浏览器版本比较低一点, 使用 innerText属性有可能不支持了, 因为 innerText是IE标准的,
+
+    // 火狐前期是和IE对着干的
+
+    // 兼容代码
+    my$("btn").onclick=function(){
+        // 设置标签中间的文本内容,使用 textContent
+       // my$("dv").textContent="this is div 标签";
+        //my$("dv").innerText="this is div 标签";
+
+        // 获取标签中的文本内容
+        // IE8浏览器不支持textContent这个属性, 在IE8浏览器中这个属性的值是 undefined
+        // 低版本的火狐浏览器是不支持 innerText这个属性的, 以为 innerText这个属性是IE的
+
+        // 一个浏览器不支持这个属性,那么输出的这个属性的值就是 undefined
+        // 如果这个属性中在浏览器中不支持,那么这个属性的类型是 undefined
+        // 判断浏览器中支不支持这个属性, 那么就判断这个属性是不是undefined,如果是undefined的话,那么就说明这个属性是不支持的
+        // 如果这个属性的值不是undefined,说明这个属性在浏览器中是支持的
+
+
+
+    };
+
+</script>
+</body>
+</html>

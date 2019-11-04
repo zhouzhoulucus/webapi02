@@ -39,3 +39,23 @@ function getDate(dt) {
 function my$(id){
     return document.getElementById(id);
 }
+
+// 设置任意标签中的任意文本内容
+function setInnerText(element, text){
+    // 判断浏览器是否支持textContent这个属性
+    if(typeof element.textContent == "undefined"){ //不支持textContent属性
+        element.innerText=text;
+    }else{ // 支持textContent属性
+        element.textContent=text;
+    }
+}
+
+// 获取任意标签中的文本内容
+function getInnerText(element){
+    // 判断浏览器是否支持textContent这个属性
+    if(typeof element.textContent == "undefined"){// 不支持textContent这个属性
+        return element.innerText;
+    }else{ // 支持textContent 这个属性
+        return element.textContent;
+    }
+}

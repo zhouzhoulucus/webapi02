@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="uu">
+    <!--score是标签中的属性-->
+    <li score="10">助教的数学成绩</li>
+    <li score="20">班主任的成绩</li>
+    <li score="30">小苏的成绩</li>
+    <li score="40">小杰的成绩</li>
+    <li score="50">乔峰成绩</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    // html标签中有没有什么自带的属性可以存储成绩的----没有
+    // 本身HTML标签没有这个属性,程序员添加的,这样的属性叫做----自定义属性 ---为了存储一些数据
+
+    // 获取所有的li标签
+    var list = document.getElementsByTagName("li");
+    // 遍历这个list,为每个li标签 添加上点击事件
+    for(var i=0;i<list.length;i++){
+        list[i].onclick=function(){
+            // 这里的score是从内存中获取的DOM对象,DOM对象中是没有 自定义的这个score属性的
+//            alert(this.score);
+
+            // 在标签当中 添加的自定义属性 是不能通过 对象.自定义属性 获取的
+            // 在标签中 添加的自定义属性,只能通过一个方法 对象.getAttribute("自定义属性名字") 来获取的
+            // 对象.getAttribute("自定义属性名字") 是专门获取自定义属性的值
+            alert(this.getAttribute("score"));
+        };
+    }
+
+</script>
+</body>
+</html>

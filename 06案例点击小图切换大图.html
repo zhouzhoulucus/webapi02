@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--点击小图片的时候 显示大图,但是阻止超链接跳转-->
+<a href="images/1.jpg" id="aa"><img src="images/1-small.jpg" id="im"></a>
+<img src="" id="big" alt="">
+<script>
+    document.getElementById("aa").onclick=function(){
+        document.getElementById("big").src =this.href;
+        return false;
+    };
+</script>
+</body>
+</html>

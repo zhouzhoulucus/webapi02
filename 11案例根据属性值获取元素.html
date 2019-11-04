@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"><br />
+<input type="text" value="您好" name="name1"/><br />
+<input type="text" value="您好" name="name2"/><br />
+<input type="text" value="您好" name="name1"/><br />
+<input type="text" value="您好" name="name3"/><br />
+<input type="text" value="您好" name="name1"/><br />
+<input type="text" value="您好" name="name4"/><br />
+<input type="text" value="您好" name="name1"/><br />
+
+<script src="common.js"></script>
+<script>
+    // 通过name属性值获取元素 ====> 基本标签(比如p标签比如a标签)是没有name属性值的,只有表单标签才有属性值
+    my$("btn").onclick=function(){
+        var inputs = document.getElementsByName("name1");
+        // 遍历每个name属性为name1的标签,将其值修改为其他值
+        for(var i=0;i<inputs.length;i++){
+            inputs[i].value="我很好,谢谢关心";
+        }
+    };
+</script>
+</body>
+</html>

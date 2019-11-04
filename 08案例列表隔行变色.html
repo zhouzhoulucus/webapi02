@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="隔行变色" id="btn"/>
+<!--凡是一个系列的都可以放到一个ul中去, 列表嘛-->
+<ul id="uu">
+    <li>佐助</li>
+    <li>鸣人</li>
+    <li>小樱</li>
+    <li>雏田</li>
+    <li>卡卡西</li>
+    <li>阿凯</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    // 根据ul的id 获取 ul里面所有的li标签
+    var lis = my$("uu").getElementsByTagName("li");
+    // 为button添加点击事件函数
+    my$("btn").onclick=function(){
+        // 遍历这个ul标签中所有的li标签
+        for(var i=0;i<lis.length;i++){
+//            if(i%2==0){ // 如果是下标是偶数 变色成为什么什么颜色
+//                lis[i].style.backgroundColor="red";
+//
+//            }else{// 如果是下标是奇数, 变色成为什么什么颜色
+//                lis[i].style.backgroundColor="yellow";
+//            }
+            lis[i].style.backgroundColor=i%2==0?"red":"yellow";
+        }
+
+    };
+</script>
+
+</body>
+</html>

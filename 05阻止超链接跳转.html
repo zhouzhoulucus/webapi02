@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    // 超链接 自带 浏览器默认跳转事件
+    // 阻止超链接的默认跳转: return false
+    // 阻止超链接的默认跳转: return false
+</script>
+<a href="https://www.baidu.com" onclick="alert('哈哈,我被点了'); return false">百度</a>
+
+
+
+<br />
+<script>
+    function f2(){
+        alert("我被点击了");
+        return false;
+    }
+</script>
+<!--第二种写法-->
+<a href="https://www.baidu.com" onclick="return f2()">百度</a>
+
+<br>
+<!--第三种写法-->
+<a href="https://www.baidu.com" id="aa">百度</a>
+<script>
+
+    // 将false 返回给这个事件
+    // 将false返回给这个事件
+    // 将false返回这个事件
+    // 将false返回这个事件
+    // 将false返回这个事件
+    // 阻止超链接跳转,在事件中return false
+    // 阻止超链接跳转 在事件中return false
+    // 阻止超链接跳转, 在事件中return false
+    document.getElementById("aa").onclick=function(){
+        alert("嘎嘎");
+        return false;
+    };
+</script>
+</body>
+</html>

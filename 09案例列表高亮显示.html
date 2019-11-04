@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="uu">
+    <li>佐助</li>
+    <li>鸣人</li>
+    <li>小樱</li>
+    <li>雏田</li>
+    <li>卡卡西</li>
+    <li>阿凯</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    var list = my$("uu").getElementsByTagName("li");
+    // 遍历循环为每个li标签添加 mouseover事件函数
+    for(var i=0;i<list.length;i++){
+        list[i].onmouseover=function(){
+//            // 首先将所有的li标签的背景颜色修改为原来的背景颜色
+//            for(var i=0;i<list.length;i++){
+//                list[i].style.backgroundColor="white";
+//            }
+
+            // 修改li标签的背景颜色
+            this.style.backgroundColor="red";
+        };
+
+        list[i].onmouseout=function(){
+            this.style.backgroundColor="white";
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .hd {
+            height: 45px;
+        }
+
+        .hd span {
+            display: inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hd span.current {
+            background-color: purple;
+        }
+
+        .bd li {
+            height: 255px;
+            background-color: purple;
+            display: none;
+        }
+
+        .bd li.current {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box" id="box">
+    <div class="hd">
+        <span class="current">体育</span>
+        <span>娱乐</span>
+        <span>新闻</span>
+        <span>综合</span>
+    </div>
+
+    <div class="bd">
+        <ul>
+            <li class="current">我是体育模块</li>
+            <li>我是娱乐模块</li>
+            <li>我是新闻模块</li>
+            <li>我是综合模块</li>
+        </ul>
+    </div>
+</div>
+<script src="common.js"></script>
+
+<script>
+    // 首先获取最外面的
+
+    // 根据标签获取 span标签
+    var spans = document.getElementsByTagName("span");
+    // 根据 标签获取所有的li元素
+    var list = document.getElementsByTagName("li");
+    // 给每个span添加点击事件
+    for (var i = 0; i < spans.length; i++) {
+        // 给每个span标签添加一个索引
+        // 在点击事件之前 就把索引保存在span标签中
+        spans[i].setAttribute("index", i);
+
+        spans[i].onclick = function () {
+            // 当某个按钮被点击的时候, 其他的按钮的背景颜色都变成 pink
+            for (var j = 0; j < spans.length; j++) {
+                // 将所有span标签的class属性移除
+                spans[j].removeAttribute("class");
+                // 给所有的span添加一个index属性
+//                spans[j].setAttribute("index", j);
+
+            }
+            // 修改当前被点击的span样式为current
+            this.className = "current";
+
+            // 给span标签添加一个index属性, 这样可以轻松的和 li标签进行关联, 当点击某个span标签的时候, 就会关联到对应的li标签
+            // 在这里写是错误的
+            //      this.setAttribute("index",i);
+
+
+            // 将所有li标签的 class属性除去
+            for (var k = 0; k < list.length; k++) {
+                list[k].removeAttribute("class");
+            }
+            // 将与span关联的li标签的class属性设置为current
+            var num = this.getAttribute("index");
+            list[num].className = "current";
+
+        };
+    }
+</script>
+
+
+</body>
+</html>
